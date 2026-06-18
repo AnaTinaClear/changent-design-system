@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changent Design System</title>
+<link rel="stylesheet" href="css/changent-ds.css">
+<style>
+  /* Page chrome for the style guide itself, built from the same tokens */
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--c-grey-150); }
+  .topbar {
+    background: var(--c-deck-bg-dark); color: var(--c-white);
+    padding: var(--sp-8) var(--sp-12);
+  }
+  .topbar h1 { color: var(--c-white); margin: 0 0 var(--sp-2); font-size: 36px; }
+  .topbar p { margin: 0; color: #B9C4DA; font-size: var(--fs-h3); max-width: 60ch; }
+  .topbar .meta { margin-top: var(--sp-4); font-size: var(--fs-caption); color: #8FA0C0; letter-spacing: .04em; text-transform: uppercase; }
+  main { max-width: 1100px; margin: 0 auto; padding: var(--sp-12) var(--sp-6); }
+  section { margin-bottom: var(--sp-12); }
+  section > h2 {
+    font-size: 22px; color: var(--c-brand-navy);
+    padding-bottom: var(--sp-2); margin-bottom: var(--sp-6);
+    border-bottom: 2px solid var(--c-grey-200);
+  }
+  .lead { color: var(--c-grey-700); max-width: 70ch; margin-top: -8px; margin-bottom: var(--sp-6); }
+  .grid { display: grid; gap: var(--sp-4); }
+  .grid--swatch { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+  .grid--2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  /* swatch */
+  .sw { border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-card); background: var(--c-white); }
+  .sw .chip-area { height: 84px; display: flex; align-items: flex-end; padding: var(--sp-2); }
+  .sw .body { padding: var(--sp-3); }
+  .sw .name { font-weight: var(--fw-semibold); font-size: 13px; }
+  .sw .hex { font-size: var(--fs-caption); color: var(--c-grey-500); font-family: "Consolas", monospace; }
+  .sw .ratio { font-size: 11px; color: var(--c-grey-500); margin-top: 2px; }
+  .tag { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: var(--r-sm); }
+  .tag--aaa { background: var(--c-success-tint); color: var(--c-success-text); }
+  .tag--aa  { background: var(--c-info-tint); color: var(--c-info-text); }
+  .tag--fill{ background: var(--c-warning-tint); color: var(--c-warning-text); }
+  /* type rows */
+  .type-row { display: flex; align-items: baseline; gap: var(--sp-6); padding: var(--sp-3) 0; border-bottom: var(--border-default); }
+  .type-row .label { width: 160px; flex: none; font-size: var(--fs-caption); color: var(--c-grey-500); }
+  /* status table */
+  .status-demo { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; }
+  .rail-demo { display: flex; gap: var(--sp-4); flex-wrap: wrap; }
+  .rail-card { display: flex; background: var(--c-white); border-radius: var(--r-md); box-shadow: var(--shadow-card); overflow: hidden; min-width: 240px; }
+  .rail { width: 40px; display: flex; align-items: center; justify-content: center; }
+  .rail span { writing-mode: vertical-rl; transform: rotate(180deg); font-weight: var(--fw-semibold); font-size: 13px; letter-spacing: .02em; }
+  .rail-card .content { padding: var(--sp-4); }
+  .rail-card .content strong { display: block; }
+  .dataviz-bar { display: flex; height: 56px; border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-card); }
+  .dataviz-bar div { flex: 1; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 4px; font-size: 10px; color: #fff; font-family: monospace; }
+  .note { background: var(--c-warning-tint); border-radius: var(--r-md); padding: var(--sp-4); font-size: 13px; color: var(--c-ink); }
+  .note strong { color: var(--c-warning-text); }
+  code { font-family: "Consolas", monospace; background: var(--c-grey-100); padding: 1px 5px; border-radius: var(--r-sm); font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Changent Design System</h1>
+  <p>One source of truth for decks, reporting UI, Power BI themes, and web. Every value validated for WCAG 2.1 AA. Typeface: Segoe UI.</p>
+  <div class="meta">v1.0.0 · This page is the brand applied to itself</div>
+</div>
+
+<main>
+
+  <!-- LOGOS -->
+  <section>
+    <h2>Logos</h2>
+    <p class="lead">Match the lockup to the background. White transparent PNG on dark surfaces; primary on light. Horizontal for headers, vertical for narrow nav.</p>
+    <div class="grid grid--2">
+      <div style="background:var(--c-white);border-radius:var(--r-md);box-shadow:var(--shadow-card);padding:var(--sp-8);display:flex;align-items:center;justify-content:center;min-height:140px">
+        <img src="assets/logos/changent-horizontal-primary.jpg" alt="Changent horizontal primary logo" style="max-width:100%;max-height:96px">
+      </div>
+      <div style="background:var(--c-deck-bg-dark);border-radius:var(--r-md);box-shadow:var(--shadow-card);padding:var(--sp-8);display:flex;align-items:center;justify-content:center;min-height:140px">
+        <img src="assets/logos/changent-horizontal-white.png" alt="Changent horizontal white logo on navy" style="max-width:100%;max-height:96px">
+      </div>
+      <div style="background:var(--c-white);border-radius:var(--r-md);box-shadow:var(--shadow-card);padding:var(--sp-6);display:flex;align-items:center;justify-content:center;min-height:200px">
+        <img src="assets/logos/changent-vertical-primary.jpg" alt="Changent vertical primary logo" style="max-width:100%;max-height:172px">
+      </div>
+      <div style="background:var(--c-deck-bg-dark);border-radius:var(--r-md);box-shadow:var(--shadow-card);padding:var(--sp-6);display:flex;align-items:center;justify-content:center;min-height:200px">
+        <img src="assets/logos/changent-vertical-white.png" alt="Changent vertical white logo on navy" style="max-width:100%;max-height:172px">
+      </div>
+    </div>
+    <p class="caption" style="margin-top:var(--sp-3)">Full lockup matrix and rules in <code>docs/logos.md</code>.</p>
+  </section>
+
+  <!-- BRAND -->
+  <section>
+    <h2>Brand palette</h2>
+    <p class="lead">Identity colors. Navy and cyan are the only colors allowed on navigation and layout; the rest are reserved for data visualization and highlights.</p>
+    <div class="grid grid--swatch">
+      <div class="sw"><div class="chip-area" style="background:#18216D"></div><div class="body"><div class="name">Brand Navy</div><div class="hex">#18216D</div><div class="ratio"><span class="tag tag--aaa">AAA 14.2:1</span></div></div></div>
+      <div class="sw"><div class="chip-area" style="background:#3FC4E0"></div><div class="body"><div class="name">Cyan</div><div class="hex">#3FC4E0</div><div class="ratio"><span class="tag tag--fill">FILL 2.1:1</span></div></div></div>
+      <div class="sw"><div class="chip-area" style="background:#F37121"></div><div class="body"><div class="name">Orange</div><div class="hex">#F37121</div><div class="ratio"><span class="tag tag--fill">FILL 2.9:1</span></div></div></div>
+      <div class="sw"><div class="chip-area" style="background:#80B036"></div><div class="body"><div class="name">Green</div><div class="hex">#80B036</div><div class="ratio"><span class="tag tag--fill">FILL 2.6:1</span></div></div></div>
+      <div class="sw"><div class="chip-area" style="background:#7A3779"></div><div class="body"><div class="name">Purple</div><div class="hex">#7A3779</div><div class="ratio"><span class="tag tag--aa">AA 7.9:1</span></div></div></div>
+      <div class="sw"><div class="chip-area" style="background:#8B8D90"></div><div class="body"><div class="name">Mid Grey</div><div class="hex">#8B8D90</div><div class="ratio"><span class="tag tag--fill">LRG 3.3:1</span></div></div></div>
+    </div>
+  </section>
+
+  <!-- SEMANTIC -->
+  <section>
+    <h2>Semantic / status palette</h2>
+    <p class="lead">Not brand colors — chosen for contrast and colorblind safety. Each status has a <code>fill</code>, a <code>text</code> variant (passes 4.5:1 on white), and an <code>on-fill</code> text color.</p>
+    <div class="note" style="margin-bottom:var(--sp-6)"><strong>Two traps:</strong> the amber <code>#F3C11B</code> and cyan <code>#3FC4E0</code> fills need <strong>dark text</strong> on top — white is invisible on amber (1.69:1). Always reinforce a status with an icon + label.</div>
+
+    <h3 style="margin-bottom:var(--sp-3)">As chips</h3>
+    <div class="status-demo" style="margin-bottom:var(--sp-6)">
+      <span class="chip chip--success">✓ Completed</span>
+      <span class="chip chip--warning">● In Progress</span>
+      <span class="chip chip--danger">! Cancelled</span>
+      <span class="chip chip--info">i Selected</span>
+      <span class="chip chip--neutral">— No data</span>
+    </div>
+
+    <h3 style="margin-bottom:var(--sp-3)">As text on white</h3>
+    <div class="status-demo" style="margin-bottom:var(--sp-6); font-weight:600">
+      <span class="txt--success">▲ Above target</span>
+      <span class="txt--warning">▼ Below target</span>
+      <span class="txt--danger">! SLA breach</span>
+      <span class="txt--info">i Highlight</span>
+      <span class="txt--neutral">— Baseline</span>
+    </div>
+
+    <div class="grid grid--swatch">
+      <div class="sw"><div class="chip-area" style="background:#198F51"><span class="chip" style="background:#fff;color:#157A43">success.fill</span></div><div class="body"><div class="name">Success</div><div class="hex">fill #198F51 · text #157A43</div></div></div>
+      <div class="sw"><div class="chip-area" style="background:#F3C11B"><span class="chip" style="background:#22292A;color:#fff">dark on-fill</span></div><div class="body"><div class="name">Warning</div><div class="hex">fill #F3C11B · text #7A5800</div></div></div>
+      <div class="sw"><div class="chip-area" style="background:#C00000"><span class="chip" style="background:#fff;color:#C00000">danger.fill</span></div><div class="body"><div class="name">Danger</div><div class="hex">fill #C00000 · text #C00000</div></div></div>
+      <div class="sw"><div class="chip-area" style="background:#3FC4E0"><span class="chip" style="background:#22292A;color:#fff">dark on-fill</span></div><div class="body"><div class="name">Info</div><div class="hex">fill #3FC4E0 · text #0E6E80</div></div></div>
+      <div class="sw"><div class="chip-area" style="background:#8B8D90"><span class="chip" style="background:#fff;color:#535456">neutral.fill</span></div><div class="body"><div class="name">Neutral</div><div class="hex">fill #8B8D90 · text #535456</div></div></div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section>
+    <h2>Typography — Segoe UI</h2>
+    <p class="lead">UI ramp shown below (px). Decks use a larger point scale (45 / 24 / 18 / 14 / 12). Minimum 14 for content, 12 for incidental text only.</p>
+    <div class="type-row"><div class="label">display · 32 Bold</div><div class="kpi-value">79%</div></div>
+    <div class="type-row"><div class="label">h1 · 24 Bold</div><div style="font-size:24px;font-weight:700;color:var(--c-brand-navy)">Quarterly Client Utilization</div></div>
+    <div class="type-row"><div class="label">h2 · 18 Semibold</div><div style="font-size:18px;font-weight:600">Section header</div></div>
+    <div class="type-row"><div class="label">h3 · 16 Semibold</div><div style="font-size:16px;font-weight:600">Card title</div></div>
+    <div class="type-row"><div class="label">body · 14 Regular</div><div style="font-size:14px">General report content — the readable minimum for body copy and labels.</div></div>
+    <div class="type-row"><div class="label">caption · 12 Regular</div><div style="font-size:12px;color:var(--c-grey-500)">Tooltips, footnotes, legends only</div></div>
+  </section>
+
+  <!-- DATA VIZ -->
+  <section>
+    <h2>Data visualization</h2>
+    <p class="lead">Categorical sequence — apply in order, max 6 per visual. Never place green beside orange or purple.</p>
+    <div class="dataviz-bar" style="margin-bottom:var(--sp-6)">
+      <div style="background:#18216D">1 navy</div>
+      <div style="background:#3FC4E0;color:#22292A">2 cyan</div>
+      <div style="background:#F37121">3 orange</div>
+      <div style="background:#8B8D90">4 grey</div>
+      <div style="background:#80B036">5 green</div>
+      <div style="background:#7A3779">6 purple</div>
+    </div>
+    <h3 style="margin-bottom:var(--sp-3)">Diverging (below → center → above target)</h3>
+    <div class="dataviz-bar">
+      <div style="background:#F37121">min #F37121</div>
+      <div style="background:#FFF3EC;color:#22292A">center #FFF3EC</div>
+      <div style="background:#3FC4E0;color:#22292A">max #3FC4E0</div>
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section>
+    <h2>Components</h2>
+    <div class="grid grid--2">
+      <div class="card">
+        <p class="kpi-value">79%</p>
+        <p class="kpi-label">Client Utilization</p>
+        <span class="txt--success" style="font-weight:600">▲ Above target</span>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">Stage Progress</h3>
+        <div class="progress" style="margin:var(--sp-3) 0"><span style="width:79%"></span></div>
+        <span class="caption">79% complete</span>
+      </div>
+    </div>
+
+    <h3 style="margin:var(--sp-6) 0 var(--sp-3)">Status rail cards (deck pattern)</h3>
+    <div class="rail-demo" style="margin-bottom:var(--sp-6)">
+      <div class="rail-card"><div class="rail" style="background:#198F51"><span style="color:#fff">Completed</span></div><div class="content"><strong>Project Name</strong><span class="caption">Delivered May 2026</span></div></div>
+      <div class="rail-card"><div class="rail" style="background:#F3C11B"><span style="color:#22292A">In Progress</span></div><div class="content"><strong>Project Name</strong><span class="caption">90% · ETA May 2026</span></div></div>
+      <div class="rail-card"><div class="rail" style="background:#C00000"><span style="color:#fff">Cancelled</span></div><div class="content"><strong>Project Name</strong><span class="caption">Cancelled May 2026</span></div></div>
+    </div>
+
+    <h3 style="margin-bottom:var(--sp-3)">Table</h3>
+    <table class="table">
+      <thead><tr><th>Program</th><th>Status</th><th>Capacity</th></tr></thead>
+      <tbody>
+        <tr><td>Fidelity</td><td><span class="txt--success">On track</span></td><td>79%</td></tr>
+        <tr><td>Pioneer</td><td><span class="txt--warning">At risk</span></td><td>62%</td></tr>
+        <tr><td>Horizon</td><td><span class="txt--danger">Cancelled</span></td><td>—</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+</body>
+</html>

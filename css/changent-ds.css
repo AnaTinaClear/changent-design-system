@@ -1,0 +1,174 @@
+/* ============================================================
+   Changent Design System — CSS Variables
+   v1.0.0 · WCAG 2.1 AA · Font: Segoe UI
+   Source of truth: tokens/tokens.json
+   ============================================================
+   Status colors are semantic, NOT brand colors. Each status has
+   a --fill (badges/bars), a --text variant that passes 4.5:1 on
+   white, and an --on-fill text color. Amber & cyan fills REQUIRE
+   dark text on top. Always pair a status with an icon or label.
+   ============================================================ */
+
+:root {
+  /* ---- Brand ---- */
+  --c-brand-navy:   #18216D;
+  --c-brand-cyan:   #3FC4E0;
+  --c-brand-orange: #F37121;
+  --c-brand-green:  #80B036;
+  --c-brand-purple: #7A3779;
+  --c-brand-grey:   #8B8D90;
+
+  /* ---- Neutrals ---- */
+  --c-white:    #FFFFFF;
+  --c-grey-50:  #F8F9FC;
+  --c-grey-100: #F3F2F0;  /* filter pane / left nav */
+  --c-grey-150: #E2E8F0;  /* deck canvas */
+  --c-grey-200: #E5E6E6;  /* gridlines / dividers / null */
+  --c-grey-400: #8B8D90;  /* muted labels (large only) */
+  --c-grey-500: #6B7280;  /* secondary labels / captions */
+  --c-grey-700: #535456;  /* dark grey body alt */
+  --c-ink:      #22292A;  /* default text */
+
+  /* ---- Deck surfaces ---- */
+  --c-deck-bg-dark: #051E48;
+  --c-deck-canvas:  #E2E8F0;
+  --c-deck-card:    #FFFFFF;
+
+  /* ---- Semantic: success ---- */
+  --c-success-fill:    #198F51;
+  --c-success-text:    #157A43;
+  --c-success-on-fill: #FFFFFF;
+  --c-success-tint:    #E8F4D5;
+
+  /* ---- Semantic: warning (amber needs DARK text on fill) ---- */
+  --c-warning-fill:    #F3C11B;
+  --c-warning-text:    #7A5800;
+  --c-warning-on-fill: #22292A;
+  --c-warning-tint:    #FDF2CC;
+
+  /* ---- Semantic: danger ---- */
+  --c-danger-fill:    #C00000;
+  --c-danger-text:    #C00000;
+  --c-danger-on-fill: #FFFFFF;
+  --c-danger-tint:    #FBE3E3;
+
+  /* ---- Semantic: info (cyan needs DARK text on fill) ---- */
+  --c-info-fill:    #3FC4E0;
+  --c-info-text:    #0E6E80;
+  --c-info-on-fill: #22292A;
+  --c-info-tint:    #D9F5FB;
+
+  /* ---- Semantic: neutral ---- */
+  --c-neutral-fill:    #8B8D90;
+  --c-neutral-text:    #535456;
+  --c-neutral-on-fill: #FFFFFF;
+  --c-neutral-tint:    #F3F2F0;
+
+  /* ---- Data viz categorical (apply in order, max 6) ---- */
+  --c-cat-1: #18216D;
+  --c-cat-2: #3FC4E0;
+  --c-cat-3: #F37121;
+  --c-cat-4: #8B8D90;
+  --c-cat-5: #80B036;
+  --c-cat-6: #7A3779;
+
+  /* ---- Data viz diverging (orange -> warm white -> cyan) ---- */
+  --c-div-min:    #F37121;
+  --c-div-center: #FFF3EC;
+  --c-div-max:    #3FC4E0;
+
+  /* ---- Typography ---- */
+  --font-base: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --fs-display: 32px;
+  --fs-h1: 24px;
+  --fs-h2: 18px;
+  --fs-h3: 16px;
+  --fs-body: 14px;
+  --fs-caption: 12px;
+
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+
+  /* ---- Spacing (4/8 grid) ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+
+  /* ---- Radius ---- */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-pill: 999px;
+
+  /* ---- Elevation & borders ---- */
+  --shadow-card: 0 1px 3px rgba(5,30,72,0.08), 0 1px 2px rgba(5,30,72,0.06);
+  --border-default: 1px solid var(--c-grey-200);
+  --border-strong: 1px solid var(--c-brand-navy);
+}
+
+/* ============================================================
+   Base + utility classes
+   ============================================================ */
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--c-ink);
+  background: var(--c-white);
+}
+
+h1 { font-size: var(--fs-h1); font-weight: var(--fw-bold); line-height: var(--lh-tight); color: var(--c-brand-navy); }
+h2 { font-size: var(--fs-h2); font-weight: var(--fw-semibold); line-height: var(--lh-tight); color: var(--c-ink); }
+h3 { font-size: var(--fs-h3); font-weight: var(--fw-semibold); color: var(--c-ink); }
+.caption { font-size: var(--fs-caption); color: var(--c-grey-500); }
+
+/* Card — white surface on canvas, subtle shadow, no accent stripes */
+.card {
+  background: var(--c-deck-card);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--sp-6);
+}
+
+/* KPI callout */
+.kpi-value { font-size: var(--fs-display); font-weight: var(--fw-bold); color: var(--c-brand-navy); line-height: var(--lh-tight); }
+.kpi-label { font-size: var(--fs-caption); color: var(--c-grey-500); }
+
+/* Status chip — always include an icon/label, never color alone */
+.chip {
+  display: inline-flex; align-items: center; gap: var(--sp-1);
+  padding: 2px var(--sp-3);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-caption); font-weight: var(--fw-semibold);
+}
+.chip--success { background: var(--c-success-fill); color: var(--c-success-on-fill); }
+.chip--warning { background: var(--c-warning-fill); color: var(--c-warning-on-fill); } /* dark text */
+.chip--danger  { background: var(--c-danger-fill);  color: var(--c-danger-on-fill); }
+.chip--info    { background: var(--c-info-fill);    color: var(--c-info-on-fill); }    /* dark text */
+.chip--neutral { background: var(--c-neutral-fill); color: var(--c-neutral-on-fill); }
+
+/* Status as text on white (use the -text variants) */
+.txt--success { color: var(--c-success-text); font-weight: var(--fw-semibold); }
+.txt--warning { color: var(--c-warning-text); font-weight: var(--fw-semibold); }
+.txt--danger  { color: var(--c-danger-text);  font-weight: var(--fw-semibold); }
+.txt--info    { color: var(--c-info-text);    font-weight: var(--fw-semibold); }
+.txt--neutral { color: var(--c-neutral-text); }
+
+/* Progress bar */
+.progress { height: 8px; background: var(--c-grey-200); border-radius: var(--r-pill); overflow: hidden; }
+.progress > span { display: block; height: 100%; border-radius: var(--r-pill); background: var(--c-success-fill); }
+
+/* Table */
+.table { width: 100%; border-collapse: collapse; font-size: var(--fs-body); }
+.table th { background: var(--c-brand-navy); color: var(--c-white); font-weight: var(--fw-bold); text-align: left; padding: var(--sp-3) var(--sp-4); }
+.table td { padding: var(--sp-3) var(--sp-4); border-bottom: var(--border-default); }
+.table tbody tr:nth-child(even) { background: var(--c-grey-50); }
