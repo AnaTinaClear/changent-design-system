@@ -81,4 +81,4 @@ White surface, `radius.md`, subtle `shadow.card`, `sp-6` padding. **No accent st
 
 ## React note
 
-The CSS variables work in any framework. For React, import the stylesheet once at the app root and use the utility classes, or read raw values from `tokens/tokens.json` if you generate styled-components / CSS-in-JS. Don't use browser `localStorage`/`sessionStorage` in artifacts rendered inside Claude.
+The CSS variables work in any framework. For React, import the stylesheet once at the app root and use the utility classes, or with Tailwind v4 import `dist/tailwind.css` (shadcn/ui variable names). For charts in JS import `dist/tokens.js`. Don't use browser `localStorage`/`sessionStorage` in artifacts rendered inside Claude.

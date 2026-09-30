@@ -28,7 +28,7 @@ The workhorse layout. A light canvas (`#E2E8F0`) holding stacked **white cards**
 
 - **Status rail** (left edge of card): the only place a status fill spans a large area. Vertical label in white/dark per the fill's `on-fill` rule.
   - Completed → `success.fill` `#198F51`, white label.
-  - In Progress → `warning.fill` `#F3C11B`, **dark label** (`#22292A`).
+  - In Progress → `warning.fill` `#F3C11B`, **dark label** (`#1A1A18`).
   - Cancelled → `danger.fill` `#C00000`, white label.
 - **Progress bar:** `success.fill` (done) on `grey-200` track, pill radius. Show the % as a label, not color alone.
 - Card: `radius.md`, `shadow.card`, `sp-6` padding. No accent stripes beyond the status rail.
@@ -44,7 +44,7 @@ The tokens are written to be machine-readable. In **Claude Design** (or Claude i
 
 ### Color & type quick reference for slides
 - Dark slides: text `#FFFFFF` on `#051E48`.
-- Light slides: text `#22292A` on white cards over `#E2E8F0` canvas.
+- Light slides: text `#1A1A18` on white cards over `#E2E8F0` canvas.
 - Titles 45pt / subheaders 24pt / body 14pt, all Segoe UI.
 - Status colors per [`docs/color.md`](color.md) — reinforce with icon + label.
 

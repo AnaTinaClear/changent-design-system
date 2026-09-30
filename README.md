@@ -10,9 +10,10 @@ A single source of truth for **decks, reporting UI, Power BI themes, and web** a
 
 | Path | What it is | Use it for |
 |------|-----------|-----------|
-| [`tokens/tokens.json`](tokens/tokens.json) | The canonical tokens (W3C design-tokens format) | The source everything else derives from |
-| [`css/changent-ds.css`](css/changent-ds.css) | CSS custom properties + utility classes | Reporting UI (HTML/React), web, landing pages |
-| [`powerbi/changent-powerbi-theme.json`](powerbi/changent-powerbi-theme.json) | Importable Power BI theme | Power BI reports |
+| [`tokens/`](tokens/) | **The only source of truth** — W3C DTCG tokens: primitives, semantic (light/dark), dataviz | Edit here, then `npm run check` |
+| [`dist/`](dist/) | *Generated:* `tokens.css`, `tailwind.css` (Tailwind v4 + shadcn/ui), `tokens.js` + types (charts) | Web apps (React/HTML) |
+| [`powerbi/changent-powerbi-theme.json`](powerbi/changent-powerbi-theme.json) | *Generated,* schema-validated Power BI theme | Power BI reports |
+| [`css/changent-ds.css`](css/changent-ds.css) | Utility classes (`.card`, `.chip`, `.table`, `.btn`, `.input`…) | Plain HTML pages |
 | [`docs/`](docs/) | Color, typography, layout, components, accessibility, logos | Reference when designing anything |
 | [`assets/logos/`](assets/logos/) | Logo lockups (horizontal + vertical; primary / white / black) | Decks, report headers, nav |
 | [`preview.html`](preview.html) | Living style guide — open in a browser | Visual reference of every token & component |
@@ -26,9 +27,19 @@ A single source of truth for **decks, reporting UI, Power BI themes, and web** a
 2. Use the deck color + type values from [`docs/color.md`](docs/color.md) and [`docs/typography.md`](docs/typography.md).
 3. Or hand this repo to Claude in Claude Design and ask for a deck — the tokens are written to be machine-readable.
 
-### Reporting UI / web
+### Web apps (React + Tailwind v4 + shadcn/ui)
+```css
+/* src/index.css */
+@import "tailwindcss";
+@import "@changent/design-system/tailwind.css";
+```
+```ts
+import { chart } from "@changent/design-system/tokens"; // Recharts palettes & status colors
+```
+
+### Plain HTML
 ```html
-<link rel="stylesheet" href="css/changent-ds.css">
+<link rel="stylesheet" href="css/changent-ds.css">  <!-- imports dist/tokens.css -->
 ```
 ```html
 <div class="card">
@@ -50,14 +61,26 @@ These come straight from the Changent accessibility guide and apply to every out
 - **Contrast:** ≥ 4.5:1 for regular text, ≥ 3:1 for large/bold text and chart fills.
 - **Never rely on color alone** — reinforce every status with an icon, label, or pattern.
 - **Max 6 colors per visual** — group extras into tints of the same hue.
-- **Consistent meaning across pages** — orange = below target *everywhere*.
+- **Consistent meaning across pages** — amber (`status.warning`) = below target / at risk *everywhere*.
+- **Borders on controls ≥ 3:1** — `border.default` `#808285`.
 - **Font:** Segoe UI for all UI and content (Power BI standard).
-- **Minimum 14px** for titles, labels, and key data; 12px only for tooltips/footnotes/legends.
+- **Minimum 14** for content (titles, labels, table cells, key data); 12 only for tooltips, footnotes, legends, axis titles; nothing below 12.
 
 Full pre-publish checklist in [`docs/accessibility.md`](docs/accessibility.md).
 
 ---
 
+## Developing
+
+```bash
+npm install
+npm run check   # build dist/ + powerbi/ from tokens, then run all checks
+```
+
+`npm test` validates the Power BI theme against Microsoft's official schema, verifies every Power BI property name, enforces the 12-minimum font rule, and checks WCAG contrast for every text/border/status pair in light and dark mode. CI runs the same on every push and fails if generated files weren't rebuilt.
+
+> `preview.html` still shows v1 values and will be regenerated from tokens in Phase 4 (living docs).
+
 ## Versioning
 
-Semantic versioning. Token changes that alter a published value are a minor bump; additive tokens are a patch. Current: **1.0.0**.
+Semantic versioning. Changing a published value = major (renamed/removed tokens) or minor (value tweak); additive tokens = patch. Current: **2.0.0** — see [`CHANGELOG.md`](CHANGELOG.md) and [`MIGRATION.md`](MIGRATION.md).

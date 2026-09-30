@@ -1,0 +1,99 @@
+{
+  "$description": "Changent semantic tokens — light mode (default). UI code consumes these.",
+  "color": {
+    "$type": "color",
+    "text": {
+      "primary":   { "$value": "{color.grey.900}", "$description": "Body & titles. 17.43:1 on white." },
+      "secondary": { "$value": "{color.grey.700}", "$description": "7.58:1 on white." },
+      "muted":     { "$value": "{color.grey.600}", "$description": "Captions, axis labels. ≥4.5:1 on every light surface." },
+      "brand":     { "$value": "{color.navy.900}", "$description": "Report titles, KPI values, links." },
+      "inverse":   { "$value": "{color.grey.0}" },
+      "disabled":  { "$value": "{color.grey.400}", "$description": "Disabled only (exempt from WCAG 1.4.3). Replaces #C0C0C0 (1.82:1)." }
+    },
+    "surface": {
+      "default":       { "$value": "{color.grey.0}" },
+      "raised":        { "$value": "{color.grey.0}", "$description": "Cards." },
+      "subtle":        { "$value": "{color.grey.050}", "$description": "Alternating table rows." },
+      "nav":           { "$value": "{color.grey.100}", "$description": "Left nav & filter pane." },
+      "canvas":        { "$value": "{color.grey.150}", "$description": "Deck canvas behind cards." },
+      "accent":        { "$value": "{color.navy.050}", "$description": "Hover, table sub-headers." },
+      "accent-strong": { "$value": "{color.navy.075}", "$description": "Active nav item." },
+      "inverse":       { "$value": "{color.navy.deep}", "$description": "Large dark surfaces only (deck title/closing slides)." }
+    },
+    "border": {
+      "default": { "$value": "{color.grey.450}", "$description": "Inputs, controls, card outlines. ≥3:1 on every light surface (WCAG 1.4.11)." },
+      "divider": { "$value": "{color.grey.200}", "$description": "Decorative separators & gridlines only — not for control boundaries." },
+      "brand":   { "$value": "{color.navy.900}", "$description": "Table outline." },
+      "focus":   { "$value": "{color.navy.900}", "$description": "Focus ring." }
+    },
+    "interactive": {
+      "primary":          { "$value": "{color.navy.900}" },
+      "primary-hover":    { "$value": "{color.navy.950}" },
+      "on-primary":       { "$value": "{color.grey.0}" },
+      "secondary":        { "$value": "{color.grey.100}" },
+      "on-secondary":     { "$value": "{color.navy.900}" }
+    },
+    "status": {
+      "success": {
+        "fill":    { "$value": "{color.green-status.600}", "$description": "White text only ≥18.66px bold (4.13:1)." },
+        "text":    { "$value": "{color.green-status.700}", "$description": "5.39:1 on white." },
+        "on-fill": { "$value": "{color.grey.0}" },
+        "tint":    { "$value": "{color.green.100}" }
+      },
+      "warning": {
+        "fill":    { "$value": "{color.amber.400}", "$description": "Below target / at risk. Dark text on top — never white." },
+        "text":    { "$value": "{color.amber.800}", "$description": "6.51:1 on white." },
+        "on-fill": { "$value": "{color.grey.900}" },
+        "tint":    { "$value": "{color.amber.050}" }
+      },
+      "danger": {
+        "fill":    { "$value": "{color.red.700}", "$description": "Critical / SLA breach. Pair with ! icon." },
+        "text":    { "$value": "{color.red.700}", "$description": "6.48:1 on white." },
+        "on-fill": { "$value": "{color.grey.0}" },
+        "tint":    { "$value": "{color.red.050}" }
+      },
+      "info": {
+        "fill":    { "$value": "{color.cyan.500}", "$description": "Highlight / selection. Dark text on top." },
+        "text":    { "$value": "{color.cyan.800}", "$description": "5.90:1 on white." },
+        "on-fill": { "$value": "{color.grey.900}" },
+        "tint":    { "$value": "{color.cyan.100}" }
+      },
+      "neutral": {
+        "fill":    { "$value": "{color.grey.400}", "$description": "No data / inactive / baseline." },
+        "text":    { "$value": "{color.grey.700}" },
+        "on-fill": { "$value": "{color.grey.900}", "$description": "Changed from white (3.33:1 fails for normal text)." },
+        "tint":    { "$value": "{color.grey.100}" }
+      }
+    }
+  },
+  "shadow": {
+    "card": {
+      "$type": "shadow",
+      "$value": [
+        { "color": "#051E4814", "offsetX": { "value": 0, "unit": "px" }, "offsetY": { "value": 1, "unit": "px" }, "blur": { "value": 3, "unit": "px" }, "spread": { "value": 0, "unit": "px" } },
+        { "color": "#051E480F", "offsetX": { "value": 0, "unit": "px" }, "offsetY": { "value": 1, "unit": "px" }, "blur": { "value": 2, "unit": "px" }, "spread": { "value": 0, "unit": "px" } }
+      ]
+    }
+  },
+  "type": {
+    "$description": "Typography roles. Rule: 14px minimum for content (titles, labels, table cells, key data); 12px only for tooltips, footnotes, legends, axis titles. Nothing below 12.",
+    "kpi":     { "$type": "typography", "$value": { "fontFamily": "{font.family.base}", "fontSize": "{font.size.32}", "fontWeight": "{font.weight.bold}",     "lineHeight": "{font.line-height.tight}" } },
+    "h1":      { "$type": "typography", "$value": { "fontFamily": "{font.family.base}", "fontSize": "{font.size.24}", "fontWeight": "{font.weight.bold}",     "lineHeight": "{font.line-height.tight}" } },
+    "h2":      { "$type": "typography", "$value": { "fontFamily": "{font.family.base}", "fontSize": "{font.size.18}", "fontWeight": "{font.weight.semibold}", "lineHeight": "{font.line-height.tight}" } },
+    "title":   { "$type": "typography", "$value": { "fontFamily": "{font.family.base}", "fontSize": "{font.size.16}", "fontWeight": "{font.weight.semibold}", "lineHeight": "{font.line-height.tight}" }, "$description": "Visual / chart titles." },
+    "body":    { "$type": "typography", "$value": { "fontFamily": "{font.family.base}", "fontSize": "{font.size.14}", "fontWeight": "{font.weight.regular}",  "lineHeight": "{font.line-height.normal}" }, "$description": "Content & table cells." },
+    "label":   { "$type": "typography", "$value": { "fontFamily": "{font.family.base}", "fontSize": "{font.size.14}", "fontWeight": "{font.weight.semibold}", "lineHeight": "{font.line-height.normal}" }, "$description": "Slicer labels, column labels, nav items." },
+    "caption": { "$type": "typography", "$value": { "fontFamily": "{font.family.base}", "fontSize": "{font.size.12}", "fontWeight": "{font.weight.regular}",  "lineHeight": "{font.line-height.normal}" }, "$description": "Tooltips, footnotes, legends, axis titles only." }
+  },
+  "deck": {
+    "$description": "Slide type sizes in points (PowerPoint / Google Slides).",
+    "size": {
+      "$type": "number",
+      "report-title": { "$value": 45 },
+      "subheader":    { "$value": 24 },
+      "column-label": { "$value": 18 },
+      "body":         { "$value": 14 },
+      "caption":      { "$value": 12 }
+    }
+  }
+}

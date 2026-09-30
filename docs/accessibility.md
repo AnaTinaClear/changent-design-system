@@ -12,7 +12,7 @@ Aligned to **WCAG 2.1 AA / VPAT**. The goal: every user — regardless of color 
 | Large/bold text (≥18pt or 14pt bold) | **3:1** |
 | Chart fills, UI components | **3:1** |
 
-Verify with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/). High-contrast pairs to rely on: dark navy `#18216D` on white, white on smokey grey `#22292A`, dark grey `#212121` on light grey `#F3F2F0`.
+Verify with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/). High-contrast pairs to rely on: dark navy `#18216D` on white, white on smokey grey `#22292A`, text `#1A1A18` on light grey `#F3F2F0` (15.58:1). Control borders use `border.default` `#808285` (≥3:1, WCAG 1.4.11). Every token pair is checked by `npm test`.
 
 **Known fails — do not use as text on white:** light blue/cyan on white, blue on light blue, orange on light grey. These are fills-only colors.
 
@@ -59,7 +59,7 @@ Before publishing any report or shipping any UI:
 
 - [ ] All text and fills meet contrast (≥ 4.5:1 text, ≥ 3:1 large fills)
 - [ ] No color-only indicators — every difference reinforced with text/icons/patterns
-- [ ] Consistent color meaning across all pages (orange = below target everywhere)
+- [ ] Consistent color meaning across all pages (amber `status.warning` = below target / at risk everywhere)
 - [ ] Max 6 colors per visual element
 - [ ] Diverging scales use orange → warm white → cyan (never orange→green)
 - [ ] Critical states use danger `#C00000` with a `!` icon

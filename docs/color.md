@@ -1,108 +1,74 @@
 # Color
 
-Two color systems live side by side. **Brand colors** carry identity. **Semantic colors** carry meaning. They follow different rules and you should never substitute one for the other.
+Two color systems live side by side. **Brand colors** carry identity. **Semantic colors** carry meaning. They follow different rules — never substitute one for the other.
 
----
+> Values below are the v2 source of truth in `tokens/*.tokens.json`. Every pair listed here is checked automatically by `npm test`.
 
-## 1. Brand palette
-
-The brand palette identifies Changent and structures the interface. Blue/navy and light blue are the *only* colors allowed on navigation and layout — secondary colors are reserved for data and highlights.
+## 1. Brand palette (primitives)
 
 | Token | Hex | On white | Role |
-|-------|-----|----------|------|
-| `brand.navy` | `#18216D` | 14.2:1 ✅ AAA | Primary CTAs, report titles, table headers, KPI values, selected nav |
-| `brand.cyan` | `#3FC4E0` | 2.06:1 ⚠️ fills only | Data viz, light-blue accents — **never text on white** |
-| `brand.orange` | `#F37121` | 2.92:1 ⚠️ fills only | Data viz / accents |
-| `brand.green` | `#80B036` | 2.57:1 ⚠️ fills only | Data viz |
-| `brand.purple` | `#7A3779` | 7.92:1 ✅ | Data viz — use last, never beside green |
-| `brand.grey` | `#8B8D90` | 3.33:1 ⚠️ large only | Neutral series / no-data |
+|---|---|---|---|
+| `color.navy.900` | `#18216D` | 14.22:1 AAA | The only navy for UI: CTAs, titles, table headers, KPI values, selected nav |
+| `color.navy.deep` | `#051E48` | — | **Only** through `surface.inverse` (deck title/closing slides). Never buttons or text — it is 1.15:1 against navy.900, so mixing them reads as a mistake |
+| `color.cyan.500` | `#3FC4E0` | 2.06:1 | Fills only — never text on white |
+| `color.orange.500` | `#F37121` | 2.92:1 | Fills only |
+| `color.green.500` | `#80B036` | 2.57:1 | Fills only |
+| `color.purple.500` | `#7A3779` | 7.92:1 | Data viz — use last, never beside green |
+| `color.grey.400` | `#8B8D90` | 3.33:1 | Neutral series / no-data fill |
 
-**Rules**
-- Do **not** use blue or light blue as a background.
-- Secondary colors (orange, green, purple, grey) are for **data visualization and informational highlights only** — never navigation, layout, or interface chrome.
+Rules: no blue or light-blue backgrounds; secondary colors (orange, green, purple, grey) only for data and highlights, never navigation or layout.
 
----
+## 2. Semantic tokens (what UI code uses)
 
-## 2. Semantic / status palette
+### Text
+| Token | Value | Minimum contrast |
+|---|---|---|
+| `text.primary` | `#1A1A18` | 17.43:1 on white |
+| `text.secondary` | `#535456` | ≥4.5:1 on every light surface |
+| `text.muted` | `#626875` | ≥4.5:1 on every light surface (was `#6B7280`, which failed on the active-nav tint) |
+| `text.brand` | `#18216D` | ≥4.5:1 on every light surface |
+| `text.disabled` | `#8B8D90` | Disabled only (WCAG exempts it). Replaces `#C0C0C0` |
 
-> **These are not brand colors.** They were chosen so that *meaning survives* — across contrast requirements and across color-vision deficiencies. They happen to overlap with brand hues in places, but their job is communication, not identity.
+### Surfaces
+`surface.default` #FFFFFF · `surface.subtle` #F8F9FC (alternating rows) · `surface.nav` #F3F2F0 (left nav, filter pane) · `surface.canvas` #E2E8F0 (deck canvas) · `surface.accent` #EEF0F8 (hover, sub-headers) · `surface.accent-strong` #E8EAF6 (active nav) · `surface.inverse` #051E48.
 
-Each status ships three values:
+### Borders
+| Token | Value | Use |
+|---|---|---|
+| `border.default` | `#808285` | Inputs, checkboxes, controls, card outlines. **≥3:1 on every light surface** (WCAG 1.4.11) — min 3.13:1 on the canvas |
+| `border.divider` | `#E5E6E6` | Decorative separators and chart gridlines only. Not for control boundaries |
+| `border.brand` | `#18216D` | Table outline |
+| `border.focus` | `#18216D` | Focus ring |
 
-- **`fill`** — for badges, chips, progress bars, status rails (as in the QBR deck).
-- **`text`** — a darker variant that passes **4.5:1 on white**, for when the status appears as text or an icon.
-- **`on-fill`** — the text color to place *on top of* the fill.
+### Status
+Each status has `fill` (chips, bars, rails), `text` (status as text on white, ≥4.5:1), `on-fill` (text on top of the fill) and `tint` (subtle background).
 
-| Status | `fill` | `text` (on white) | `on-fill` | Meaning |
-|--------|--------|-------------------|-----------|---------|
-| **success** | `#198F51` | `#157A43` (5.39:1 ✅) | `#FFFFFF` | Completed, on/above target, on time |
-| **warning** | `#F3C11B` | `#7A5800` (6.51:1 ✅) | **`#22292A`** dark | In progress, below target, at risk |
-| **danger** | `#C00000` | `#C00000` (6.48:1 ✅) | `#FFFFFF` | Cancelled, critical, SLA breach |
-| **info** | `#3FC4E0` | `#0E6E80` (5.90:1 ✅) | **`#22292A`** dark | Highlight, selection, info callout |
-| **neutral** | `#8B8D90` | `#535456` (7.58:1 ✅) | `#FFFFFF` | No data, inactive, baseline |
+| Status | fill | text | on-fill | Meaning |
+|---|---|---|---|---|
+| success | `#198F51` | `#157A43` | white — **bold ≥14pt only** (4.13:1) | Completed, on/above target |
+| warning | `#F3C11B` | `#7A5800` | `#1A1A18` | **Below target, at risk**, in progress |
+| danger | `#C00000` | `#C00000` | white | Critical, cancelled, SLA breach |
+| info | `#3FC4E0` | `#0E6E80` | `#1A1A18` | Highlight, selection |
+| neutral | `#8B8D90` | `#535456` | `#1A1A18` | No data, inactive, baseline |
 
-### ⚠️ The two traps
+Amber and cyan fills are below 3:1 on white. That is a documented exception: they are always paired with an icon and a label and carry dark text. **Never rely on color alone** — every status gets an icon (✓ ▲ ▼ ! i) and/or a text label.
 
-1. **Amber fill needs dark text.** White on `#F3C11B` is **1.69:1** — effectively invisible. Always use `--c-warning-on-fill` (dark ink) on amber. This is why the QBR "In Progress" rail uses white text *on the rail* but the rail is large/bold — for chips and labels, use dark text.
-2. **Cyan fill needs dark text.** White on `#3FC4E0` is **2.06:1**. Use dark ink on cyan fills.
+**Orange vs amber:** amber (`status.warning`) is the categorical "at risk / below target" status. Orange stays a data-viz color and the low end of the continuous KPI diverging scale.
 
-### Always reinforce
-Never rely on color alone. Pair every status with:
-- an **icon** (`✓` success, `▲`/`▼` direction, `!` critical, `i` info), and/or
-- a **text label** ("Completed", "At risk").
+## 3. Data visualization
 
-This is a hard requirement for screen readers, high-contrast mode, and colorblind users.
+**Categorical** (apply in order, max 6 per visual): navy `#18216D` → cyan `#3FC4E0` → orange `#F37121` → grey `#8B8D90` → green `#80B036` → purple `#7A3779`. Never green beside orange or purple; never navy beside purple. More than 6 categories → group the tail into tints of one hue.
 
----
+**Sequential** (5 stops each): `chart.sequential.blue|cyan|green|orange.1–5`.
 
-## 3. Neutrals & surfaces
+**Diverging**
+- `chart.diverging.kpi` — below/above target: `#F37121 #F9A87B #FFF3EC #87DEF0 #3FC4E0`
+- `chart.diverging.financial` — negative/positive: `#C00000 #E8897F #F5F5F5 #8D95C4 #18216D`. Always add +/− labels.
 
-| Token | Hex | Use |
-|-------|-----|-----|
-| `white` | `#FFFFFF` | Dashboard bg, card surface |
-| `grey-50` | `#F8F9FC` | Table alternating rows |
-| `grey-100` | `#F3F2F0` | Filter pane / left nav background |
-| `grey-150` | `#E2E8F0` | **Deck content-slide canvas** (behind white cards) |
-| `grey-200` | `#E5E6E6` | Gridlines, dividers, null state — **never a data series** |
-| `grey-500` | `#6B7280` | Secondary labels, captions (4.83:1) |
-| `grey-700` | `#535456` | Dark grey body alt (7.58:1) |
-| `ink` | `#22292A` | Default body & title text (14.8:1) |
-| `deck.bg-dark` | `#051E48` | Title & closing slide background, header bar |
+**Priority**: `#C6CAE1 #3FC4E0 #80B036 #F37121 #C00000` (low → critical), reinforced with icon shapes.
 
----
+Gridlines `#E5E6E6`, axis labels `#626875`, no-data `#E5E6E6`.
 
-## 4. Data visualization
+## 4. Dark mode
 
-### Categorical — apply in this order, **max 6 per visual**
-`#18216D` → `#3FC4E0` → `#F37121` → `#8B8D90` → `#80B036` → `#7A3779`
-
-Need more than 6 categories? Group the long tail into **tints of the same hue**, don't add new colors.
-
-**Colorblind safety:** never place these pairs adjacent — green+orange, green+purple, navy+purple (they collapse under deuteranopia/protanopia). Safest contrast pair: **cyan vs navy** or **navy vs orange**.
-
-### Sequential (heat maps, intensity)
-Low → high per hue, set as Minimum/Maximum in PBI conditional formatting. See `tokens.json → color.dataviz.sequential`.
-
-### Diverging (above/below target, variance)
-`#F37121` (min) → `#FFF3EC` (center) → `#3FC4E0` (max). Colorblind safe. **Always add +/− labels.**
-
----
-
-## Contrast cheat-sheet (on white `#FFFFFF`)
-
-```
-navy   #18216D  14.2:1  AAA   text anywhere
-ink    #22292A  14.8:1  AAA   body text
-grey-700 #535456 7.58:1 AAA   secondary text
-purple #7A3779   7.92:1 AA    text ok
-danger #C00000   6.48:1 AA    text ok
-grey-500 #6B7280 4.83:1 AA    captions
-─────────────────── 4.5 text threshold ───────────────────
-green  #80B036   2.57:1       FILL ONLY
-orange #F37121   2.92:1       FILL ONLY
-cyan   #3FC4E0   2.06:1       FILL ONLY
-─────────────────── 3.0 large-fill threshold ─────────────
-grey   #8B8D90   3.33:1       large fills only
-```
-
-Verify any new pairing with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) and simulate with Color Oracle / Coblis before publishing.
+Semantic tokens have dark values in `tokens/semantic.dark.tokens.json` (seeded from ATLAS). Apply with `class="dark"` or `data-theme="dark"`. All dark pairs pass the same checks as light.

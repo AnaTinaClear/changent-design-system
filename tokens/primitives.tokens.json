@@ -1,0 +1,112 @@
+{
+  "$description": "Changent primitives — raw values, no meaning. Never reference these directly from UI code; use semantic tokens.",
+  "color": {
+    "$type": "color",
+    "navy": {
+      "050": { "$value": "#EEF0F8", "$description": "Navy tint — accent surfaces, hover" },
+      "075": { "$value": "#E8EAF6", "$description": "Navy tint — active nav item (promoted from apps)" },
+      "100": { "$value": "#C6CAE1" },
+      "300": { "$value": "#8D95C4" },
+      "600": { "$value": "#4A559A" },
+      "900": { "$value": "#18216D", "$description": "Brand navy. 14.22:1 on white." },
+      "950": { "$value": "#111A5A", "$description": "Navy hover/pressed (promoted from apps)" },
+      "deep": { "$value": "#051E48", "$description": "Deck navy. Only via surface.inverse — never buttons or text." }
+    },
+    "cyan": {
+      "100": { "$value": "#D9F5FB" },
+      "300": { "$value": "#87DEF0" },
+      "500": { "$value": "#3FC4E0", "$description": "Brand cyan. 2.06:1 on white — fills only." },
+      "700": { "$value": "#2A8EA2" },
+      "800": { "$value": "#0E6E80", "$description": "Cyan for text on white. 5.90:1." },
+      "900": { "$value": "#1B5E6E" }
+    },
+    "orange": {
+      "100": { "$value": "#FDE0D0" },
+      "300": { "$value": "#F9A87B" },
+      "500": { "$value": "#F37121", "$description": "Brand orange. 2.92:1 on white — fills only." },
+      "700": { "$value": "#C45A10" },
+      "900": { "$value": "#8B3510", "$description": "Fixed typo from v1 (#8D3510)." },
+      "050": { "$value": "#FFF3EC", "$description": "Warm white — diverging center." }
+    },
+    "green": {
+      "100": { "$value": "#E8F4D5" },
+      "300": { "$value": "#AECF6B" },
+      "500": { "$value": "#80B036", "$description": "Brand green. 2.57:1 on white — fills only." },
+      "700": { "$value": "#638B28" },
+      "900": { "$value": "#4F6E22" }
+    },
+    "purple": {
+      "500": { "$value": "#7A3779", "$description": "Brand purple. 7.92:1 on white." }
+    },
+    "grey": {
+      "0":   { "$value": "#FFFFFF" },
+      "050": { "$value": "#F8F9FC" },
+      "100": { "$value": "#F3F2F0", "$description": "Brand light grey — nav / filter pane." },
+      "150": { "$value": "#E2E8F0", "$description": "Deck canvas." },
+      "200": { "$value": "#E5E6E6", "$description": "Decorative dividers & chart gridlines only." },
+      "400": { "$value": "#8B8D90", "$description": "Brand mid grey. 3.33:1 on white." },
+      "450": { "$value": "#808285", "$description": "Border grey. ≥3:1 on every light surface (min 3.13:1 on canvas) — WCAG 1.4.11." },
+      "600": { "$value": "#626875", "$description": "Muted text. ≥4.5:1 on every light surface (replaces #6B7280, which fell to 4.04:1 on the active-nav tint)." },
+      "700": { "$value": "#535456", "$description": "Brand dark grey. 7.58:1 on white." },
+      "800": { "$value": "#22292A", "$description": "Brand 'Smokey Grey'. 14.8:1 on white." },
+      "900": { "$value": "#1A1A18", "$description": "Text ink. 17.43:1 on white — highest-contrast option." }
+    },
+    "green-status": {
+      "600": { "$value": "#198F51" },
+      "700": { "$value": "#157A43" }
+    },
+    "amber": {
+      "050": { "$value": "#FDF2CC" },
+      "400": { "$value": "#F3C11B", "$description": "1.69:1 on white — fill only, dark text on top." },
+      "800": { "$value": "#7A5800" }
+    },
+    "red": {
+      "050": { "$value": "#FBE3E3" },
+      "300": { "$value": "#E8897F" },
+      "700": { "$value": "#C00000", "$description": "Critical. 6.48:1 on white." }
+    },
+    "neutral-050": { "$value": "#F5F5F5" }
+  },
+  "font": {
+    "family": {
+      "base": { "$type": "fontFamily", "$value": ["Segoe UI", "-apple-system", "BlinkMacSystemFont", "Roboto", "sans-serif"] }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular":  { "$value": 400 },
+      "semibold": { "$value": 600 },
+      "bold":     { "$value": 700 }
+    },
+    "size": {
+      "$type": "dimension",
+      "12": { "$value": { "value": 12, "unit": "px" } },
+      "14": { "$value": { "value": 14, "unit": "px" } },
+      "16": { "$value": { "value": 16, "unit": "px" } },
+      "18": { "$value": { "value": 18, "unit": "px" } },
+      "24": { "$value": { "value": 24, "unit": "px" } },
+      "32": { "$value": { "value": 32, "unit": "px" } }
+    },
+    "line-height": {
+      "$type": "number",
+      "tight":  { "$value": 1.2 },
+      "normal": { "$value": 1.5 }
+    }
+  },
+  "space": {
+    "$type": "dimension",
+    "1":  { "$value": { "value": 4,  "unit": "px" } },
+    "2":  { "$value": { "value": 8,  "unit": "px" } },
+    "3":  { "$value": { "value": 12, "unit": "px" } },
+    "4":  { "$value": { "value": 16, "unit": "px" } },
+    "6":  { "$value": { "value": 24, "unit": "px" } },
+    "8":  { "$value": { "value": 32, "unit": "px" } },
+    "12": { "$value": { "value": 48, "unit": "px" } }
+  },
+  "radius": {
+    "$type": "dimension",
+    "sm":   { "$value": { "value": 4,   "unit": "px" } },
+    "md":   { "$value": { "value": 8,   "unit": "px" }, "$description": "Default card radius." },
+    "lg":   { "$value": { "value": 12,  "unit": "px" } },
+    "pill": { "$value": { "value": 999, "unit": "px" } }
+  }
+}
