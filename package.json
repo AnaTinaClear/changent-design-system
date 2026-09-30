@@ -1,0 +1,36 @@
+{
+  "name": "@changent/design-system",
+  "version": "2.0.0",
+  "description": "Changent Design System \u2014 tokens, CSS, Tailwind, Power BI theme",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test.mjs",
+    "check": "npm run build && npm test"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "style-dictionary": "^5.5.5"
+  },
+  "type": "module",
+  "exports": {
+    "./tokens.css": "./dist/tokens.css",
+    "./tailwind.css": "./dist/tailwind.css",
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "default": "./dist/tokens.js"
+    },
+    "./powerbi-theme.json": "./powerbi/changent-powerbi-theme.json"
+  },
+  "files": [
+    "dist",
+    "powerbi",
+    "tokens",
+    "css"
+  ]
+}

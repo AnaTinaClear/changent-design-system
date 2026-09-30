@@ -1,0 +1,61 @@
+{
+  "$description": "Dark mode overrides (seeded from ATLAS). Same paths as semantic.tokens.json. Primitives for night mode live under color.night.",
+  "color": {
+    "$type": "color",
+    "night": {
+      "bg":        { "$value": "#14141F" },
+      "card":      { "$value": "#1B1C2A" },
+      "raised":    { "$value": "#262A4A" },
+      "line":      { "$value": "#7A7D93", "$description": "Border ≥3:1 on bg, card and raised surfaces." },
+      "divider":   { "$value": "#2C2D3D" },
+      "ink":       { "$value": "#F0EFED" },
+      "ink-2":     { "$value": "#A3A3AD" },
+      "navy":      { "$value": "#7B87E8" },
+      "navy-tint": { "$value": "#C7CDFB" },
+      "on-light":  { "$value": "#0E0F1A" },
+      "green":     { "$value": "#34C17E" },
+      "amber":     { "$value": "#F3C11B" },
+      "red":       { "$value": "#EF7A6E" },
+      "cyan":      { "$value": "#3FC4E0" },
+      "grey":      { "$value": "#9A9CA3" }
+    },
+    "text": {
+      "primary":   { "$value": "{color.night.ink}" },
+      "secondary": { "$value": "{color.night.ink-2}" },
+      "muted":     { "$value": "{color.night.ink-2}" },
+      "brand":     { "$value": "{color.night.navy-tint}" },
+      "inverse":   { "$value": "{color.night.on-light}" },
+      "disabled":  { "$value": "{color.night.divider}" }
+    },
+    "surface": {
+      "default":       { "$value": "{color.night.bg}" },
+      "raised":        { "$value": "{color.night.card}" },
+      "subtle":        { "$value": "{color.night.card}" },
+      "nav":           { "$value": "{color.night.card}" },
+      "canvas":        { "$value": "{color.night.bg}" },
+      "accent":        { "$value": "{color.night.raised}" },
+      "accent-strong": { "$value": "{color.night.raised}" },
+      "inverse":       { "$value": "{color.night.ink}" }
+    },
+    "border": {
+      "default": { "$value": "{color.night.line}" },
+      "divider": { "$value": "{color.night.divider}" },
+      "brand":   { "$value": "{color.night.navy}" },
+      "focus":   { "$value": "{color.night.navy}" }
+    },
+    "interactive": {
+      "primary":       { "$value": "{color.night.navy}" },
+      "primary-hover": { "$value": "{color.night.navy-tint}" },
+      "on-primary":    { "$value": "{color.night.on-light}" },
+      "secondary":     { "$value": "{color.night.raised}" },
+      "on-secondary":  { "$value": "{color.night.ink}" }
+    },
+    "status": {
+      "success": { "fill": { "$value": "{color.night.green}" }, "text": { "$value": "{color.night.green}" }, "on-fill": { "$value": "{color.night.on-light}" }, "tint": { "$value": "#16392A" } },
+      "warning": { "fill": { "$value": "{color.night.amber}" }, "text": { "$value": "{color.night.amber}" }, "on-fill": { "$value": "{color.night.on-light}" }, "tint": { "$value": "#3A2F0B" } },
+      "danger":  { "fill": { "$value": "{color.night.red}" },   "text": { "$value": "{color.night.red}" },   "on-fill": { "$value": "{color.night.on-light}" }, "tint": { "$value": "#3F1A17" } },
+      "info":    { "fill": { "$value": "{color.night.cyan}" },  "text": { "$value": "{color.night.cyan}" },  "on-fill": { "$value": "{color.night.on-light}" }, "tint": { "$value": "#0F3440" } },
+      "neutral": { "fill": { "$value": "{color.night.grey}" },  "text": { "$value": "{color.night.ink-2}" }, "on-fill": { "$value": "{color.night.on-light}" }, "tint": { "$value": "{color.night.raised}" } }
+    }
+  }
+}

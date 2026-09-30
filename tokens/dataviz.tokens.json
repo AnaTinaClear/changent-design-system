@@ -1,0 +1,39 @@
+{
+  "$description": "Data visualization tokens. Categorical: apply in order, max 6 per visual. Never green beside orange or purple.",
+  "color": {
+    "$type": "color",
+    "chart": {
+      "categorical": {
+        "1": { "$value": "{color.navy.900}",   "$description": "Brand anchor." },
+        "2": { "$value": "{color.cyan.500}",   "$description": "Safest pair with navy." },
+        "3": { "$value": "{color.orange.500}", "$description": "Safe with blue." },
+        "4": { "$value": "{color.grey.400}",   "$description": "Neutral separator." },
+        "5": { "$value": "{color.green.500}",  "$description": "Add icon/label." },
+        "6": { "$value": "{color.purple.500}", "$description": "Use last; never beside green." }
+      },
+      "gridline":   { "$value": "{color.grey.200}" },
+      "axis-label": { "$value": "{color.grey.600}" },
+      "nodata":     { "$value": "{color.grey.200}" },
+      "sequential": {
+        "blue":   { "1": { "$value": "{color.navy.050}" },  "2": { "$value": "{color.navy.100}" },  "3": { "$value": "{color.navy.300}" },  "4": { "$value": "{color.navy.600}" },  "5": { "$value": "{color.navy.900}" } },
+        "cyan":   { "1": { "$value": "{color.cyan.100}" },  "2": { "$value": "{color.cyan.300}" },  "3": { "$value": "{color.cyan.500}" },  "4": { "$value": "{color.cyan.700}" },  "5": { "$value": "{color.cyan.900}" } },
+        "green":  { "1": { "$value": "{color.green.100}" }, "2": { "$value": "{color.green.300}" }, "3": { "$value": "{color.green.500}" }, "4": { "$value": "{color.green.700}" }, "5": { "$value": "{color.green.900}" } },
+        "orange": { "1": { "$value": "{color.orange.100}" },"2": { "$value": "{color.orange.300}" },"3": { "$value": "{color.orange.500}" },"4": { "$value": "{color.orange.700}" },"5": { "$value": "{color.orange.900}" } }
+      },
+      "diverging": {
+        "kpi": {
+          "$description": "Below / above target. Orange → warm white → cyan. Colorblind safe. Continuous scale — categorical 'at risk' status uses status.warning (amber).",
+          "1": { "$value": "{color.orange.500}" }, "2": { "$value": "{color.orange.300}" }, "3": { "$value": "{color.orange.050}" }, "4": { "$value": "{color.cyan.300}" }, "5": { "$value": "{color.cyan.500}" }
+        },
+        "financial": {
+          "$description": "Negative / positive delta. Always pair with +/- labels.",
+          "1": { "$value": "{color.red.700}" }, "2": { "$value": "{color.red.300}" }, "3": { "$value": "{color.neutral-050}" }, "4": { "$value": "{color.navy.300}" }, "5": { "$value": "{color.navy.900}" }
+        }
+      },
+      "priority": {
+        "$description": "Low → critical. Reinforce with icon shapes.",
+        "1": { "$value": "{color.navy.100}" }, "2": { "$value": "{color.cyan.500}" }, "3": { "$value": "{color.green.500}" }, "4": { "$value": "{color.orange.500}" }, "5": { "$value": "{color.red.700}" }
+      }
+    }
+  }
+}
