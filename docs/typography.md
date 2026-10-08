@@ -3,8 +3,19 @@
 **One typeface: Segoe UI.** It's the official Microsoft font shipped inside Power BI, so it renders natively in reports and keeps decks, UI, and dashboards consistent. Use it for *all* UI and content.
 
 ```
-font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+font-family: "Segoe UI", "Selawik", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
 ```
+
+### Cross-platform rendering
+
+Segoe UI ships only with Windows (and inside Power BI). On macOS, Linux, Android and iOS the browser would otherwise fall back to a system font and the "one typeface" rule would break.
+
+The fix: **Selawik**, Microsoft's open-source (SIL OFL 1.1) font, designed as a metric-compatible fallback for Segoe UI — same widths and line breaks, so layouts do not shift between platforms. Files live in `assets/fonts/` (Regular 400, Semibold 600, Bold 700, woff2).
+
+- Plain HTML: `css/changent-ds.css` already imports `css/fonts.css`.
+- Tailwind / React: also add `@import "@changent/design-system/fonts.css";` once at the app root.
+- Decks and Power BI: keep Segoe UI (PowerPoint on Windows and Power BI render it natively; on Mac, install Selawik or accept the system fallback in PowerPoint).
+- Windows users still see real Segoe UI; Selawik only loads where it is missing.
 
 Weights used: **Regular (400)**, **Semibold (600)**, **Bold (700)**.
 

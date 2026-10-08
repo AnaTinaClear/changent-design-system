@@ -45,7 +45,7 @@ Each status has `fill` (chips, bars, rails), `text` (status as text on white, �
 
 | Status | fill | text | on-fill | Meaning |
 |---|---|---|---|---|
-| success | `#198F51` | `#157A43` | white — **bold ≥14pt only** (4.13:1) | Completed, on/above target |
+| success | `#157A43` | `#157A43` | white (5.39:1) | Completed, on/above target |
 | warning | `#F3C11B` | `#7A5800` | `#1A1A18` | **Below target, at risk**, in progress |
 | danger | `#C00000` | `#C00000` | white | Critical, cancelled, SLA breach |
 | info | `#3FC4E0` | `#0E6E80` | `#1A1A18` | Highlight, selection |

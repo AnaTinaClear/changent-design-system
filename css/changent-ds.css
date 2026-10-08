@@ -3,6 +3,7 @@
    Values come from dist/tokens.css (generated from tokens/*.tokens.json).
    Do not hardcode hex values here — reference --cds-* variables.
    ============================================================ */
+@import "./fonts.css";
 @import "../dist/tokens.css";
 
 /* ---- v1 aliases (DEPRECATED — removed in v3). Map old names to v2 tokens so existing pages keep working. ---- */

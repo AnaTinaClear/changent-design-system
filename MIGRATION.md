@@ -5,7 +5,7 @@
 Until the package is published to npm, install straight from GitHub:
 
 ```bash
-npm i github:AnaTinaClear/changent-design-system#v2.0.0
+npm i github:AnaTinaClear/changent-design-system#v2.1.0
 ```
 
 ```css

@@ -52,7 +52,6 @@
       "900": { "$value": "#1A1A18", "$description": "Text ink. 17.43:1 on white — highest-contrast option." }
     },
     "green-status": {
-      "600": { "$value": "#198F51" },
       "700": { "$value": "#157A43" }
     },
     "amber": {
@@ -69,7 +68,7 @@
   },
   "font": {
     "family": {
-      "base": { "$type": "fontFamily", "$value": ["Segoe UI", "-apple-system", "BlinkMacSystemFont", "Roboto", "sans-serif"] }
+      "base": { "$type": "fontFamily", "$value": ["Segoe UI", "Selawik", "-apple-system", "BlinkMacSystemFont", "Roboto", "sans-serif"] }
     },
     "weight": {
       "$type": "fontWeight",

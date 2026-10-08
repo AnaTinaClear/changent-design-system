@@ -27,11 +27,11 @@ The workhorse layout. A light canvas (`#E2E8F0`) holding stacked **white cards**
 ```
 
 - **Status rail** (left edge of card): the only place a status fill spans a large area. Vertical label in white/dark per the fill's `on-fill` rule.
-  - Completed → `success.fill` `#198F51`, white label.
+  - Completed → `success.fill` `#157A43`, white label.
   - In Progress → `warning.fill` `#F3C11B`, **dark label** (`#1A1A18`).
   - Cancelled → `danger.fill` `#C00000`, white label.
 - **Progress bar:** `success.fill` (done) on `grey-200` track, pill radius. Show the % as a label, not color alone.
-- Card: `radius.md`, `shadow.card`, `sp-6` padding. No accent stripes beyond the status rail.
+- Card: `radius.md`, `shadow.card`, `--cds-space-6` padding. No accent stripes beyond the status rail.
 
 ### 3. Closing slide
 - Background: `deck.bg-dark`. Logo top-left (`changent-horizontal-white.png`). "Thank you!" in white, large.
@@ -56,4 +56,4 @@ The tokens are written to be machine-readable. In **Claude Design** (or Claude i
 - ❌ Don't center body text — left-align; center only titles.
 - ❌ Don't put white text on the amber or cyan fill.
 - ❌ Don't exceed 6 colors in any chart.
-- ❌ Don't crowd — keep `sp-6` between cards, generous margins.
+- ❌ Don't crowd — keep `--cds-space-6` between cards, generous margins.

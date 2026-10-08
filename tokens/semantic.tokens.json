@@ -35,7 +35,7 @@
     },
     "status": {
       "success": {
-        "fill":    { "$value": "{color.green-status.600}", "$description": "White text only ≥18.66px bold (4.13:1)." },
+        "fill":    { "$value": "{color.green-status.700}", "$description": "White text on top passes AA at any size (5.39:1)." },
         "text":    { "$value": "{color.green-status.700}", "$description": "5.39:1 on white." },
         "on-fill": { "$value": "{color.grey.0}" },
         "tint":    { "$value": "{color.green.100}" }

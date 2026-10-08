@@ -6,17 +6,17 @@ A clean, minimalistic layout lets users navigate and interpret data without clut
 
 ## Spacing system
 
-**4pt / 8pt grid.** Pick `--sp-3` (12px) or `--sp-6` (24px) gaps and use them consistently — don't mix arbitrary values.
+**4pt / 8pt grid.** Pick `--cds-space-3` (12px) or `--cds-space-6` (24px) gaps and use them consistently — don't mix arbitrary values.
 
 | Token | px | Typical use |
 |-------|----|-----|
-| `sp-1` | 4 | Icon-to-label gap |
-| `sp-2` | 8 | Tight internal padding |
-| `sp-3` | 12 | Cell padding, small gaps |
-| `sp-4` | 16 | Default element gap |
-| `sp-6` | 24 | Card padding, section gaps |
-| `sp-8` | 32 | Major section separation |
-| `sp-12` | 48 | Page-level breathing room |
+| `--cds-space-1` | 4 | Icon-to-label gap |
+| `--cds-space-2` | 8 | Tight internal padding |
+| `--cds-space-3` | 12 | Cell padding, small gaps |
+| `--cds-space-4` | 16 | Default element gap |
+| `--cds-space-6` | 24 | Card padding, section gaps |
+| `--cds-space-8` | 32 | Major section separation |
+| `--cds-space-12` | 48 | Page-level breathing room |
 
 Maintain ample white space. Every KPI, title, or block needs breathing room — avoid overcrowding.
 

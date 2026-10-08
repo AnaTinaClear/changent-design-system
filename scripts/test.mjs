@@ -83,7 +83,7 @@ const pairs = [
   ['interactive.on-primary', 'interactive.primary', TEXT], ['interactive.on-secondary', 'interactive.secondary', TEXT],
   ...['success', 'warning', 'danger', 'info', 'neutral'].flatMap((s) => [
     [`status.${s}.text`, 'surface.default', TEXT], [`status.${s}.fill`, 'surface.default', UI, 'indicator fill'],
-    [`status.${s}.on-fill`, `status.${s}.fill`, s === 'success' ? UI : TEXT, s === 'success' ? 'large/bold text only' : ''],
+    [`status.${s}.on-fill`, `status.${s}.fill`, TEXT],
     [`status.${s}.text`, `status.${s}.tint`, TEXT],
   ]),
 ];

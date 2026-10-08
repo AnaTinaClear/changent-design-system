@@ -12,7 +12,7 @@ When generating **any** deck, dashboard, reporting UI, web page, or chart for Ch
 | Power BI | `powerbi/changent-powerbi-theme.json` |
 
 ## Always
-- **Font:** Segoe UI everywhere.
+- **Font:** Segoe UI everywhere; on the web the stack continues to bundled Selawik (`fonts.css`) so Mac/Linux/Android render the same metrics.
 - **Never hardcode hex values** in app code. Use a semantic token; if none fits, add one to the tokens (and justify it) instead of inventing a color.
 - **Status colors are semantic, not brand.** success / warning (amber = below target, at risk) / danger (`#C00000`) / info / neutral. Every status gets an icon **and** a label — never color alone.
 - **Amber and cyan fills take dark text** (`on-fill` = `#1A1A18`). White on them fails.
