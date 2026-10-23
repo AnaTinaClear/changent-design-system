@@ -1,21 +1,28 @@
 {
   "name": "@changent/design-system",
   "version": "2.1.0",
-  "description": "Changent Design System \u2014 tokens, CSS, Tailwind, Power BI theme",
+  "description": "Changent Design System — tokens, CSS, Tailwind, Power BI theme",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
     "build": "node scripts/build.mjs",
     "test": "node scripts/test.mjs",
-    "check": "npm run build && npm test"
+    "check": "npm run build && npm test",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@storybook/addon-a11y": "^10.6.3",
+    "@storybook/addon-docs": "^10.6.3",
+    "@storybook/html-vite": "^10.6.3",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
-    "style-dictionary": "^5.5.5"
+    "storybook": "^10.6.3",
+    "style-dictionary": "^5.5.5",
+    "vite": "^8.3.5"
   },
   "type": "module",
   "exports": {

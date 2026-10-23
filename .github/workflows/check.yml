@@ -12,3 +12,4 @@ jobs:
       - name: Generated files are committed
         run: git diff --exit-code -- dist powerbi || (echo "::error::Run 'npm run build' and commit dist/ and powerbi/" && exit 1)
       - run: npm test
+      - run: npm run build-storybook

@@ -17,6 +17,7 @@ A single source of truth for **decks, reporting UI, Power BI themes, and web** a
 | [`docs/`](docs/) | Color, typography, layout, components, accessibility, logos | Reference when designing anything |
 | [`assets/logos/`](assets/logos/) | Logo lockups (horizontal + vertical; primary / white / black) | Decks, report headers, nav |
 | [`preview.html`](preview.html) | Living style guide — open in a browser | Visual reference of every token & component |
+| [`stories/`](stories/) + [`.storybook/`](.storybook/) | Storybook: tokens, type, spacing and every component with light/dark and an a11y panel | `npm run storybook` (dev) · `npm run build-storybook` (static site in `storybook-static/`) |
 
 ---
 
