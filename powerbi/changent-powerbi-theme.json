@@ -1,5 +1,5 @@
 {
-  "name": "Changent DataViz Theme v2.0.0",
+  "name": "Changent DataViz Theme v2.1.0",
   "dataColors": [
     "#18216D",
     "#3FC4E0",
@@ -12,7 +12,7 @@
     "#C45A10",
     "#638B28"
   ],
-  "good": "#198F51",
+  "good": "#157A43",
   "neutral": "#8B8D90",
   "bad": "#C00000",
   "minimum": "#F37121",
@@ -892,7 +892,7 @@
           {
             "increaseFill": {
               "solid": {
-                "color": "#198F51"
+                "color": "#157A43"
               }
             },
             "decreaseFill": {

@@ -17,6 +17,7 @@ A single source of truth for **decks, reporting UI, Power BI themes, and web** a
 | [`docs/`](docs/) | Color, typography, layout, components, accessibility, logos | Reference when designing anything |
 | [`assets/logos/`](assets/logos/) | Logo lockups (horizontal + vertical; primary / white / black) | Decks, report headers, nav |
 | [`preview.html`](preview.html) | Living style guide — open in a browser | Visual reference of every token & component |
+| [`stories/`](stories/) + [`.storybook/`](.storybook/) | Storybook: tokens, type, spacing and every component with light/dark and an a11y panel | `npm run storybook` (dev) · `npm run build-storybook` (static site in `storybook-static/`) |
 
 ---
 
@@ -63,7 +64,7 @@ These come straight from the Changent accessibility guide and apply to every out
 - **Max 6 colors per visual** — group extras into tints of the same hue.
 - **Consistent meaning across pages** — amber (`status.warning`) = below target / at risk *everywhere*.
 - **Borders on controls ≥ 3:1** — `border.default` `#808285`.
-- **Font:** Segoe UI for all UI and content (Power BI standard).
+- **Font:** Segoe UI for all UI and content (Power BI standard). Web falls back to Selawik (bundled, metric-compatible) on Mac, Linux and Android — see `docs/typography.md`.
 - **Minimum 14** for content (titles, labels, table cells, key data); 12 only for tooltips, footnotes, legends, axis titles; nothing below 12.
 
 Full pre-publish checklist in [`docs/accessibility.md`](docs/accessibility.md).

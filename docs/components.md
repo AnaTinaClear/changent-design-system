@@ -14,7 +14,7 @@ Reusable patterns for reporting UI (HTML/React). All classes ship in [`css/chang
 <span class="chip chip--neutral">— No data</span>
 ```
 
-Pill radius, semibold, 12px. `warning` and `info` use **dark** `on-fill` text by design.
+Pill radius, semibold, 14px (the `label` type style — status labels are content, so the 14px floor applies). `warning` and `info` use **dark** `on-fill` text by design.
 
 ---
 
@@ -75,7 +75,7 @@ Navy header, white bold text, alternating `grey-50` rows, `grey-200` row borders
 <div class="card"> … </div>
 ```
 
-White surface, `radius.md`, subtle `shadow.card`, `sp-6` padding. **No accent stripes** — differentiate with tint backgrounds (`*-tint` tokens) or the shadow, never an edge bar.
+White surface, `radius.md`, subtle `shadow.card`, `--cds-space-6` padding. **No accent stripes** — differentiate with tint backgrounds (`*-tint` tokens) or the shadow, never an edge bar.
 
 ---
 
